@@ -15,10 +15,10 @@ const useTradingViewWidget = (
     containerRef.current.innerHTML = `<div class="tradingview-widget-container__widget" style="height: ${height}px; width: 100%;"></div>`;
 
     const script = document.createElement("script");
-
+    script.type = "text/javascript";
     script.src = scriptURL;
     script.async = true;
-    script.innerHTML = JSON.stringify(config);
+    script.textContent = JSON.stringify(config);
 
     containerRef.current.appendChild(script);
     containerRef.current.dataset.loaded = "true";
@@ -29,7 +29,7 @@ const useTradingViewWidget = (
         delete containerRef.current.dataset.loaded;
       }
     };
-  }, [scriptURL]);
+  }, [scriptURL, config]);
 
   return containerRef;
 };
