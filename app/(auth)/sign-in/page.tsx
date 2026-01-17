@@ -1,5 +1,3 @@
-import React from 'react'
-
 const SignIn = () => {
   return (
     <div>SignInPage</div>
@@ -7,3 +5,5 @@ const SignIn = () => {
 }
 
 export default SignIn
+
+
