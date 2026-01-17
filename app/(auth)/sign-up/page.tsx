@@ -1,4 +1,5 @@
 'use client'
+import ContrySelectField from "@/components/forms/ContrySelectField";
 import InputField from "@/components/forms/inputField";
 import SelectField from "@/components/forms/SelectField";
 import { Button } from "@/components/ui/button";
@@ -63,7 +64,7 @@ const SignUp = () => {
           validation={{ required: 'Password is required.', minLength: 8 }}
         />
 
-        {/* Country */}
+        <ContrySelectField />
 
         <SelectField
           name="investmentGoals"
