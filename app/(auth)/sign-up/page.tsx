@@ -1,4 +1,5 @@
 'use client'
+import InputField from "@/components/forms/inputField";
 import { Button } from "@/components/ui/button";
 import { useForm } from "react-hook-form"
 
@@ -34,7 +35,33 @@ const SignUp = () => {
       <h1 className="form-title">Sign Up & Personalize Your Experience.</h1>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-        {/* INPUTS */}
+        <InputField
+          name="fullName"
+          label="Full Name"
+          placeholder="Enter your full name"
+          register={register}
+          error={errors.fullName}
+          validation={{ required: 'Full name is required.', minLength: 2 }}
+        />
+        <InputField
+          name="email"
+          label="Email"
+          placeholder="email@example.com"
+          register={register}
+          error={errors.email}
+          validation={{ required: 'Email is required.', pattern: /^\w+@\w+\.\w+$/, message: 'Email address is required' }}
+        />
+        <InputField
+          name="password"
+          label="Password"
+          type="password"
+          placeholder="Enter your password"
+          register={register}
+          error={errors.password}
+          validation={{ required: 'Password is required.', minLength: 8}}
+        />
+
+
 
         <Button
           type="submit"
